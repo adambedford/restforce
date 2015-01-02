@@ -329,6 +329,13 @@ module Restforce
         api_get(path).body
       end
 
+      def chatter(object_id)
+        api_get("chatter/feeds/record/#{object_id}/feed-elements").body
+      end
+
+      # def user_id
+      #   user_info.id.split('/').last.to_i
+      # end
 
     private
 
