@@ -329,8 +329,18 @@ module Restforce
         api_get(path).body
       end
 
-      def chatter(object_id)
-        api_get("chatter/feeds/record/#{object_id}/feed-elements").body
+
+
+      # Public: Finds all feed items related to an object
+      #
+      # object_id - The ID of the object
+      # params - Serialized parameters to be appended to URI
+      #
+      def chatter(object_id, params=nil)
+        path = "chatter/feeds/record/#{object_id}/feed-elements"
+        path << params if params && params.any?
+
+        api_get(path).body
       end
 
       # def user_id
