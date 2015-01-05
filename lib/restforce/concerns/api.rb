@@ -338,7 +338,7 @@ module Restforce
       #
       def chatter(object_id, params=nil)
         path = "chatter/feeds/record/#{object_id}/feed-elements"
-        path << params if params && params.any?
+        path << params if params
 
         api_get(path).body
       end
